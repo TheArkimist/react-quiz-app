@@ -29,12 +29,3 @@ export const fetchCategories = async () => {
     }
 };
 
-export const fetchDifficulties = () => {
-    return ['easy', 'medium', 'hard'];
-}
-
-export const fetchTypes = () => {
-    return ['multiple', 'boolean'];
-}
-
-
