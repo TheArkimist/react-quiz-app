@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchCategories } from '../api/projectAPI';
 import { LuBrain } from "react-icons/lu";
+import { BsStars } from 'react-icons/bs';
 
 const QuizOptions = ({ startQuiz }) => {
 
@@ -99,11 +100,12 @@ const QuizOptions = ({ startQuiz }) => {
             onChange={(handleChange)}
           />
         </div>
+        
         <button
           type='submit'
-          className='w-full bg-linear-210 from-purple-600 to-pink-500 cursor-pointer hover:text-black  text-white font-bold py-2 px-4 rounded-md mt-4 transition-colors duration-300'
+          className='w-full bg-linear-210 flex justify-center items-center from-purple-600 to-pink-500 cursor-pointer hover:text-black  text-white font-bold py-2 px-4 rounded-md mt-4 transition-colors duration-300'
         >
-          Start Quiz
+          <BsStars className='mr-3'/> Start Quiz
         </button>
 
       </form>
