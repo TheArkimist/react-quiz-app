@@ -33,7 +33,7 @@ const QuizOptions = ({ startQuiz }) => {
 
 
   return (
-    <div className='w-[70%] -space-y-4 px-20 flex items-center justify-center flex-col z-20 bg-white rounded-3xl p-8 shadow-lg shadow-amber-400/30'>
+    <div className='w-[70%] -space-y-4 px-20 flex items-center justify-center flex-col z-20 bg-white rounded-3xl p-10  shadow-lg shadow-amber-400/30'>
       <div className='w-fit bg-transparent z-10 text-center flex justify-center items-center'>
         <LuBrain className='text-7xl text-white mx-auto mb-6 mr-3 border-none bg-linear-90 from-purple-600 to-pink-500 p-3 rounded-full'/>
         <h1 className='text-3xl text-black mb-6'>QuizMaster</h1>

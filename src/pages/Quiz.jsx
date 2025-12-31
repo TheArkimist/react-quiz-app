@@ -42,14 +42,20 @@ const Quiz = ({ questions }) => {
     } else {
       handleSubmit();
     }
-  }
+  };
 
   const correctAnswer = questions.map((q, idx) => (q.correct_answer === selectedAnswers[idx] ? idx + 1 : null)).filter((q) => q !== null);
-  const incorrectAnswer = questions.map((q, idx) => (q.correct_answer === selectedAnswers[idx] && selectedAnswers[idx] ? idx + 1 : null)).filter((q) => q !== null);
+  const incorrectAnswer = questions.map((q, idx) => (q.correct_answer !== selectedAnswers[idx] ? idx + 1 : null)).filter((q) => q !== null);
 
   if (isSubmitted) {
     return (
-      <QuizCompleted />
+      <QuizCompleted 
+        questions={questions}
+        selectedAnswers={selectedAnswers}
+        correctAnswer={correctAnswer}
+        incorrectAnswer={incorrectAnswer}
+      
+      />
     )
   }
 
@@ -66,6 +72,8 @@ const Quiz = ({ questions }) => {
         <h2 className='text-xl font-semibold mb-4'>Question {currentQuestion + 1} of {questions.length}</h2>
         
       </div>
+
+      
 
       <QuizQuestions 
         question ={questions[currentQuestion]}
