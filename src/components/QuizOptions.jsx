@@ -7,7 +7,11 @@ const QuizOptions = ({ startQuiz }) => {
   const [category, setCategory] = useState([]);
   const [options, setOptions] = useState({
     category: '',
+    difficulty: 'easy',
+    type: 'multiple',
+    amount: 10,
   });
+  const { difficulty, type, amount } = options;
 
   useEffect(() => {
     const getCategories = async () => {
@@ -18,10 +22,8 @@ const QuizOptions = ({ startQuiz }) => {
   }, []);
 
   const handleChange = (e) => {
-    setOptions({
-      ...options,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setOptions({...options, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -48,7 +50,6 @@ const QuizOptions = ({ startQuiz }) => {
             id='category'
             onChange={handleChange}
           >
-            <option value=''>Any Category</option>
             {category.map((cat) => (
               <option key={cat.id} value={cat.id}>{cat.name}</option>
             ))}
@@ -62,9 +63,8 @@ const QuizOptions = ({ startQuiz }) => {
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
             name='difficulty'
             id='difficulty'
-            onChange={handleChange}
+            onChange={(handleChange)}
           >
-            <option value=''>Any Difficulty</option>
             <option value='easy'>Easy</option>
             <option value='medium'>Medium</option>
             <option value='hard'>Hard</option>
@@ -78,7 +78,7 @@ const QuizOptions = ({ startQuiz }) => {
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
             name='type'
             id='type'
-            onChange={handleChange}
+            onChange={(handleChange)}
           >
             <option value=''>Any Type</option>
             <option value='multiple'>Multiple Choice</option>
@@ -96,7 +96,7 @@ const QuizOptions = ({ startQuiz }) => {
             min={1}
             max={50}
             value={options.amount || 10}
-            onChange={handleChange}
+            onChange={(handleChange)}
           />
         </div>
         <button

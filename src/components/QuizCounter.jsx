@@ -32,7 +32,7 @@ const QuizCounter = ({ difficulty, questionCount, onTimeUp }) => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [timeLeft, onTimeUp]);
+  }, [timeLeft]);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);

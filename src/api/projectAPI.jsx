@@ -1,5 +1,9 @@
 export const fetchQuizProjects = async (category, difficulty, type, amount) => {
-    const baseUrl = 'https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}';
+    const baseUrl = 'https://opentdb.com/api.php?' +
+        `amount=${amount}` +
+        (category ? `&category=${category}` : '') +
+        (difficulty ? `&difficulty=${difficulty}` : '') +
+        (type ? `&type=${type}` : '');
 
     try {
         const response = await fetch(baseUrl);
@@ -11,7 +15,7 @@ export const fetchQuizProjects = async (category, difficulty, type, amount) => {
     } catch (error) {
         console.error('Failed to fetch questions', error);
         return [];
-    }
+    } 
 };
 
 export const fetchCategories = async () => {

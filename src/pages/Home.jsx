@@ -16,11 +16,12 @@ const Home = () => {
         options.type,
         options.amount
     );
-    setQuizData(data
-        
-    );
-
-  
+    
+    const formattedData = data.map((item) => ({
+        ...item,
+        answers: [...item.incorrect_answers, item.correct_answer].sort(),
+    }));
+    setQuizData(formattedData);
   }
 
 
