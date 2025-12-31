@@ -31,7 +31,7 @@ const Home = () => {
         ) 
             : 
             (
-                <Quiz />
+                <Quiz questions={quizData}/>
             )
         }
 
