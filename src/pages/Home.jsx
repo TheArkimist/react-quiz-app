@@ -12,6 +12,11 @@ const Home = () => {
   const startQuiz = async (options) => {
     const data = await fetchQuizProjects(
         options.category,
+        options.difficulty,
+        options.type,
+        options.amount
+    );
+    setQuizData(data
         
     );
 
@@ -20,7 +25,7 @@ const Home = () => {
 
 
   return (
-    <div className='w-full h-screen flex justify-center items-center'>
+    <div className='w-full min-h-screen flex justify-center items-center m-4'>
         {!quizData ? (
             <QuizOptions startQuiz={startQuiz}/>
         ) 

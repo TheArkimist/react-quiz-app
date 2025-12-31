@@ -31,16 +31,16 @@ const QuizOptions = ({ startQuiz }) => {
 
 
   return (
-    <div className='w-[80%] -space-y-4 px-20 flex items-center justify-center flex-col z-20 relative bg-white rounded-2xl p-8 shadow-lg shadow-amber-400/30'>
-      <div className='w-fit p-1 bg-transparent z-10 text-center'>
-        <LuBrain className='text-8xl text-white mx-auto mb-2 border-none bg-linear-90 from-purple-600 to-pink-500 p-3 rounded-full'/>
-        <h1 className='text-4xl text-black mb-4'>QuizMaster</h1>
-        <p className='text-gray-800 mb-4 text-center'>Test your knowledge with questions from around the world</p>
+    <div className='w-[70%] -space-y-4 px-20 flex items-center justify-center flex-col z-20 bg-white rounded-2xl p-8 shadow-lg shadow-amber-400/30'>
+      <div className='w-fit bg-transparent z-10 text-center'>
+        <LuBrain className='text-7xl text-white mx-auto mb-2 border-none bg-linear-90 from-purple-600 to-pink-500 p-3 rounded-full'/>
+        <h1 className='text-3xl text-black mb-4'>QuizMaster</h1>
+        <p className='text-gray-800 text-center'>Test your knowledge with questions from around the world</p>
       </div>
 
-      <form className='w-full flex flex-col gap-6 mt-6' onSubmit={handleSubmit}>
+      <form className='w-[80%] flex flex-col gap-4 mt-6' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-2'>
-          <label className='text-neutral-50/80 font-medium' htmlFor='category'>Category</label>
+          <label className='text-black font-medium' htmlFor='category'>Category</label>
           <select
             value={options.category}
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
@@ -56,7 +56,7 @@ const QuizOptions = ({ startQuiz }) => {
           
         </div>
         <div className='flex flex-col gap-2'>
-          <label className='text-neutral-50/80 font-medium' htmlFor='difficulty'>Difficulty</label>
+          <label className='text-black font-medium' htmlFor='difficulty'>Difficulty</label>
           <select
             value={options.difficulty}
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
@@ -72,7 +72,7 @@ const QuizOptions = ({ startQuiz }) => {
         </div>
 
         <div className='flex flex-col gap-2'>
-          <label className='text-neutral-50/80 font-medium' htmlFor='type'>Type</label>
+          <label className='text-black font-medium' htmlFor='type'>Type</label>
           <select
             value={options.type}
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
@@ -87,7 +87,7 @@ const QuizOptions = ({ startQuiz }) => {
         </div>
 
         <div className='flex flex-col gap-2'>
-          <label className='text-neutral-50/80 font-medium' htmlFor='amount'>Number of Questions</label>
+          <label className='text-black font-medium' htmlFor='amount'>Number of Questions</label>
           <input
             type='number'
             className='p-2 rounded-md bg-neutral-800 text-neutral-50/90'
