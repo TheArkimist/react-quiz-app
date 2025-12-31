@@ -1,8 +1,12 @@
 import React from 'react'
+import QuizCounter from '../components/QuizCounter'
 
 const Quiz = () => {
   return (
-    <div>Quiz</div>
+    <div>
+      <QuizCounter />
+
+    </div>
   )
 }
 
