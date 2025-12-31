@@ -26,7 +26,7 @@ const Home = () => {
 
 
   return (
-    <div className='w-full min-h-screen flex justify-center items-center m-4'>
+    <div className='w-full flex justify-center items-center m-2'>
         {!quizData ? (
             <QuizOptions startQuiz={startQuiz}/>
         ) 
