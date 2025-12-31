@@ -7,7 +7,7 @@ import QuizCompleted from '../components/QuizCompleted'
 const Quiz = ({ questions }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleAnswer = (index, answer) => {
@@ -58,7 +58,7 @@ const Quiz = ({ questions }) => {
       
       <div className='w-full mt-4 flex justify-between items-center mb-2'>
         <QuizCounter 
-          
+          difficulty={questions[0]?.difficulty || 'medium'}
           questionCount={questions.length}
           onTimeUp={handleTimeUp}
         />
