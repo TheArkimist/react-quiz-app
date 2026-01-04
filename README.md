@@ -1,16 +1,78 @@
-# React + Vite
+# React Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive quiz application built with React. This app allows users to configure quiz options and take a quiz with dynamically loaded questions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Select quiz options:
+  - **Category**: Choose from various categories.
+  - **Difficulty**: Easy, Medium, or Hard.
+  - **Type**: Multiple Choice or True/False.
+  - **Number of Questions**: Select between 1 and 50 questions.
+- Fetches quiz questions dynamically from an API.
+- Highlights selected answers.
+- Responsive design for mobile and desktop.
+- Modern UI with smooth transitions.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React**: Frontend library for building the user interface.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React Router**: For navigation between pages.
+- **html-react-parser**: For rendering HTML content in quiz questions.
+- **API Integration**: Fetch quiz data dynamically.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```Bash
+   git clone https://github.com/your-username/react-quiz-app.git
+   cd react-quiz-app
+   ```
+
+2. Install dependencies:
+```Bash
+npm install
+```
+
+3. Start the develpment server
+```Bash
+npm start
+```
+
+4. Open the app in your browser
+
+http://localhost:3000
+
+## How to use the App
+
+## How to Use
+### Select quiz options:
+
+- Category: Choose a category for the quiz.
+- Difficulty: Select the difficulty level (easy, medium, hard).
+- Type: Choose the type of questions (multiple choice, true/false).
+- Number of Questions: Specify the number of questions (1-50).
+- Click the "Start Quiz" button to begin.
+
+### Answer the questions by selecting an option.
+
+### Submit your answers to see the results.
+
+## API Integration
+The app fetches quiz data from an external API. Ensure the API endpoint is correctly configured in your project.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request.
+
+## Acknowledgementd
+- Open Trivia Database for providing quiz questions.
+- Tailwind CSS for the styling framework.
+- React for the frontend library.
+
+## Contact
+Contact
+For any questions or feedback, feel free to reach out:
+
+- Email: arkinedt0555@gmail.com
+- GitHub: TheArkimist
