@@ -2,6 +2,7 @@ import React from 'react'
 
 const QuizCompleted = ({ questions, selectedAnswers, correctAnswer, incorrectAnswer}) => {
 
+  // Handles Questions that are not Answered
   const notAnswered = questions.map((_, idx) => (selectedAnswers[idx] ? null : idx + 1)).filter((q) => q !== null);
 
   return (

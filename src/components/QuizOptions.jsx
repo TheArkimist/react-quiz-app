@@ -13,6 +13,7 @@ const QuizOptions = ({ startQuiz }) => {
     amount: 10,
   });
   
+  // Storing Category Data From Open Trivia
   useEffect(() => {
     const getCategories = async () => {
       const data = await fetchCategories();
@@ -21,11 +22,13 @@ const QuizOptions = ({ startQuiz }) => {
     getCategories();
   }, []);
 
+  // Handles Change of Selected Options
   const handleChange = (e) => {
     const { name, value } = e.target;
     setOptions({...options, [name]: value });
   };
 
+  // handles Submission of Answers
   const handleSubmit = (e) => {
     e.preventDefault();
     startQuiz(options);

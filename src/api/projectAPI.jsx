@@ -1,4 +1,7 @@
-export const fetchQuizProjects = async (category, difficulty, type, amount) => {
+// Fetching Data from the Open Trivia Database
+
+// Fetching Questions based in the Options Selected by User
+export const fetchQuizQuestion = async (category, difficulty, type, amount) => {
     const baseUrl = 'https://opentdb.com/api.php?' +
         `amount=${amount}` +
         (category ? `&category=${category}` : '') +
@@ -18,6 +21,8 @@ export const fetchQuizProjects = async (category, difficulty, type, amount) => {
     } 
 };
 
+
+// Fetching Categories from the Open Trivia Database
 export const fetchCategories = async () => {
     const categoryUrl = 'https://opentdb.com/api_category.php';
     try {

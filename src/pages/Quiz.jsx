@@ -10,6 +10,7 @@ const Quiz = ({ questions }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // Handles the Selection of an Answer
   const handleAnswer = (index, answer) => {
     setSelectedAnswers({
       ...selectedAnswers,
@@ -17,10 +18,12 @@ const Quiz = ({ questions }) => {
     });
   };
 
+  // Handles the Submission of Answers
   const handleSubmit = () => {
     setIsSubmitted(true);
   };
 
+  // Handles Retrieval of Next Question
   const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -29,6 +32,7 @@ const Quiz = ({ questions }) => {
     }
   };
 
+  // Handles Retrieval of the Previous Question
   const handlePreviousQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -36,6 +40,7 @@ const Quiz = ({ questions }) => {
 
   };
 
+  // Handles when Timer Reaches 0
   const handleTimeUp = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -44,9 +49,11 @@ const Quiz = ({ questions }) => {
     }
   };
 
+  // Checks for Correct and Incorrect Answers Selected by User
   const correctAnswer = questions.map((q, idx) => (q.correct_answer === selectedAnswers[idx] ? idx + 1 : null)).filter((q) => q !== null);
   const incorrectAnswer = questions.map((q, idx) => (q.correct_answer !== selectedAnswers[idx] ? idx + 1 : null)).filter((q) => q !== null);
 
+  // Passes Options to Quiz Completed Component when Answers are Submitted
   if (isSubmitted) {
     return (
       <QuizCompleted 
@@ -59,6 +66,7 @@ const Quiz = ({ questions }) => {
     )
   }
 
+  // Displays Timer, Questions, Options, Previous, Next or Submit Button if Answers are not Submitted
   return (
     <div  className='w-[70%] -space-y-4 px-20 flex items-center justify-center flex-col z-20 bg-white rounded-2xl p-8 shadow-lg shadow-amber-400/30'>
       
